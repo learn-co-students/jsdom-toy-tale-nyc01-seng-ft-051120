@@ -25,14 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function fetchToys() {
-    fetch("http://localhost:3000/toys")
+  function fetchToys(url) {
+    fetch(url)
     .then(resp => resp.json())
     .then(allToysDataObject => renderToys(allToysDataObject));
   }
 
-
-  fetchToys()
+  fetchToys("http://localhost:3000/toys")
 
   const addBtn = document.querySelector("#new-toy-btn");
   const toyFormContainer = document.querySelector(".container");
