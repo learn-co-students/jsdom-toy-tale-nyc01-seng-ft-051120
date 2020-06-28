@@ -4,13 +4,13 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
+      "likes": 7
     },
     {
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 8
+      "likes": 5
     },
     {
       "id": 3,
@@ -47,6 +47,24 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "Jessie",
+      "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wayfair.com%2Ffurniture%2Fpdx%2Fadvanced-graphics-jessie-disneypixar-toy-story-4-cardboard-standup-bbbm1306.html&psig=AOvVaw2R8k2-0bAJ-eemu365scBT&ust=1593468351919000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDAj6zCpeoCFQAAAAAdAAAAABAH",
+      "likes": 0,
+      "id": 9
+    },
+    {
+      "name": "Jessie",
+      "image": "https://vignette.wikia.nocookie.net/p__/images/8/88/Jessie_Toy_Story_3.png/revision/latest?cb=20161023024601&path-prefix=protagonist",
+      "likes": 0,
+      "id": 10
+    },
+    {
+      "name": "Pickle Rick",
+      "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com%2FMorty-Dancing-Pickle-Grooves-Sounds%2Fdp%2FB07SS5NHDC&psig=AOvVaw2CPHyqe1VSM9Wt2EEvnIxz&ust=1593471997417000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOCRqfvPpeoCFQAAAAAdAAAAABAD",
+      "likes": 3,
+      "id": 11
     }
   ]
 }
