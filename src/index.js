@@ -65,9 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   
-  async function updateLike(url, num) {
-    const response = await fetch(url, {
-      method: 'PATCH', //try patch
+  function updateLike(url, num) {
+    fetch(url, {
+      method: 'PATCH', 
       headers:
       {
         "Content-Type": "application/json",
