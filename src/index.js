@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function fetchToys() {
-    return fetch("http://localhost:3000/toys")
-      .then(resp => resp.json())
-      .then(json => renderToys(json));
+    fetch("http://localhost:3000/toys")
+    .then(resp => resp.json())
+    .then(allToysDataObject => renderToys(allToysDataObject));
   }
 
 
@@ -46,23 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  function postToy(url, toy) {
-    fetch(url, {
-      method: 'POST',
-      headers:
-      {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({
-        "name": `${toy.name}`,
-        "image": `${toy.image}`,
-        "likes": 0
-      })
-    })
-    .then(resp => resp.json())
-    .then(toyObject => renderToy(toyObject))
-  }
 
   
   function updateLike(url, num) {
@@ -79,26 +62,45 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
- 
 
   toyBox.addEventListener("click", function(e) {
     if (e.target.className === "like-btn") {
       e.preventDefault()
       const toyDiv = e.target.parentNode
       const toyId = toyDiv.id
-      const likes = toyDiv.querySelector('p')
+      const likesText = toyDiv.querySelector('p')
       
-      const likeInt = parseInt(likes.innerText.split(" ")[0])
+      const likeInt = parseInt(likesText.innerText.split(" ")[0])
       const newLikes = (likeInt + 1)
+      likesText.innerText = `${newLikes} Likes`
       updateLike(`http://localhost:3000/toys/${toyId}`, `${newLikes}`)
-      likes.innerText = `${newLikes} Likes`
       
     } 
   }) 
 
+
+  function postToy(url, toy) {
+    fetch(url, {
+      method: 'POST',
+      headers:
+      {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        "name": `${toy.name}`,
+        "image": `${toy.image}`,
+        "likes": `${toy.likes}`
+      })
+    })
+    .then(resp => resp.json())
+    .then(toyObject => renderToy(toyObject))
+  }
+
   const form = document.querySelector(".add-toy-form")
   form.addEventListener("submit", function(e) {
     e.preventDefault();
+
     const newToy = {
       name: e.target.name.value,
       image: e.target.image.value,
@@ -106,11 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     postToy('http://localhost:3000/toys', newToy);
-    // renderToy(newToy)
-    // const lastToyAdded = fetchToys()[-1]
-    // renderToy(lastToyAdded);
     form.reset()
-
   }) 
 
 
